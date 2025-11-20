@@ -26,7 +26,7 @@ def index():
     text_color = os.getenv("TEXT_COLOR", "#C8C8C8")
 
     # Treat FONT_SIZE as a max size; allow px/rem/em/vw etc.
-    max_font_size = os.getenv("MAX_FONT_SIZE", "3.0rem")
+    max_font_size = os.getenv("MAX_FONT_SIZE", "5.0rem")
 
     html = f"""
     <!doctype html>
@@ -63,7 +63,7 @@ def index():
           }}
 
           .label {{
-            font-size: clamp(0.5rem, 0.9rem, 1.0em);
+            font-size: clamp(0.75rem, 0.9rem, 1.0em);
             opacity: 0.7;
             font-weight: 500;
             margin-bottom: clamp(6px, 0.2rem, 12px);
@@ -73,7 +73,7 @@ def index():
             width: 100%;
             font-weight: 700;
             line-height: 1.05;
-            font-size: clamp(0.8rem, 12vw, {max_font_size});
+            font-size: clamp(0.8rem, 13vw, {max_font_size});
             word-break: break-word;
             overflow-wrap: anywhere;
           }}
@@ -81,7 +81,7 @@ def index():
       </head>
       <body>
         <div class="frame">
-          <div class="label">Public IP</div>
+          <!--<div class="label">Public IP</div>-->
           <div class="ip">{ip}</div>
         </div>
       </body>
