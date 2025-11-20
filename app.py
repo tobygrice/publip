@@ -48,38 +48,34 @@ def index():
             background: {background};
             color: {text_color};
             font-family: system-ui, -apple-system, BlinkMacSystemFont,
-                         "Segoe UI", sans-serif;
+                        "Segoe UI", sans-serif;
           }}
 
           .frame {{
             height: 100%;
             width: 100%;
-            display: grid;
-            place-items: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             padding: clamp(12px, 3vw, 32px);
+            text-align: center;
+          }}
+
+          .label {{
+            font-size: clamp(0.7rem, 1.6vw, 0.95rem);
+            opacity: 0.7;
+            font-weight: 500;
+            margin-bottom: clamp(6px, 1.2vw, 12px);
           }}
 
           .ip {{
             width: 100%;
-            text-align: center;
             font-weight: 700;
             line-height: 1.05;
-            /* 
-              Make text grow to fill the frame.
-              clamp(min, preferred based on viewport, max from env)
-            */
             font-size: clamp(1.5rem, 12vw, {max_font_size});
             word-break: break-word;
             overflow-wrap: anywhere;
-          }}
-
-          .label {{
-            position: absolute;
-            top: clamp(8px, 2vw, 18px);
-            left: clamp(8px, 2vw, 18px);
-            font-size: clamp(0.7rem, 1.6vw, 0.95rem);
-            opacity: 0.7;
-            font-weight: 500;
           }}
         </style>
       </head>
