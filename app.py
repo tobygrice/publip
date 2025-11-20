@@ -73,7 +73,7 @@ def index():
             width: 100%;
             font-weight: 700;
             line-height: 1.05;
-            font-size: clamp(0.8rem, 13vw, {max_font_size});
+            font-size: clamp(0.8rem, 11vw, {max_font_size});
             word-break: break-word;
             overflow-wrap: anywhere;
           }}
