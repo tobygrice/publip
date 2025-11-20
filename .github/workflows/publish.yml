@@ -33,5 +33,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/vpn-ip-viewer:latest
-            ghcr.io/${{ github.repository_owner }}/vpn-ip-viewer:${{ github.sha }}
+            ghcr.io/${{ github.repository_owner }}/publip:latest
+            ghcr.io/${{ github.repository_owner }}/publip:${{ github.sha }}
