@@ -63,7 +63,7 @@ def index():
           }}
 
           .label {{
-            font-size: clamp(1.0rem, 2.0vw, 0.95rem);
+            font-size: clamp(0.9rem, 2.0vw, 1.0rem);
             opacity: 0.7;
             font-weight: 500;
             margin-bottom: clamp(6px, 0.2rem, 12px);
