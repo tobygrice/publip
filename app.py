@@ -22,9 +22,11 @@ def index():
     ip = get_public_ip()
 
     # Read env vars with sensible defaults
-    background = os.getenv("BACKGROUND_COLOR", "#111827")  # slate-900-ish
-    text_color = os.getenv("TEXT_COLOR", "#e5e7eb")        # gray-200-ish
-    font_size = os.getenv("FONT_SIZE", "2rem")
+    background = os.getenv("BACKGROUND_COLOR", "#2E2E2E")
+    text_color = os.getenv("TEXT_COLOR", "#C8C8C8")
+
+    # Treat FONT_SIZE as a max size; allow px/rem/em/vw etc.
+    max_font_size = os.getenv("MAX_FONT_SIZE", "3.0rem")
 
     html = f"""
     <!doctype html>
@@ -41,33 +43,48 @@ def index():
           }}
           body {{
             margin: 0;
-            padding: 0;
             height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 100vw;
             background: {background};
             color: {text_color};
             font-family: system-ui, -apple-system, BlinkMacSystemFont,
                          "Segoe UI", sans-serif;
           }}
-          .wrapper {{
-            text-align: center;
+
+          .frame {{
+            height: 100%;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            padding: clamp(12px, 3vw, 32px);
           }}
-          .label {{
-            font-size: 0.9rem;
-            opacity: 0.7;
-            margin-bottom: 0.2rem;
-          }}
+
           .ip {{
-            font-weight: 600;
-            font-size: {font_size};
-            word-break: break-all;
+            width: 100%;
+            text-align: center;
+            font-weight: 700;
+            line-height: 1.05;
+            /* 
+              Make text grow to fill the frame.
+              clamp(min, preferred based on viewport, max from env)
+            */
+            font-size: clamp(1.5rem, 12vw, {max_font_size});
+            word-break: break-word;
+            overflow-wrap: anywhere;
+          }}
+
+          .label {{
+            position: absolute;
+            top: clamp(8px, 2vw, 18px);
+            left: clamp(8px, 2vw, 18px);
+            font-size: clamp(0.7rem, 1.6vw, 0.95rem);
+            opacity: 0.7;
+            font-weight: 500;
           }}
         </style>
       </head>
       <body>
-        <div class="wrapper">
+        <div class="frame">
           <div class="label">Public IP</div>
           <div class="ip">{ip}</div>
         </div>
