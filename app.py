@@ -63,7 +63,7 @@ def index():
           }}
 
           .label {{
-            font-size: clamp(0.5rem, 2vw, 1.0em);
+            font-size: clamp(0.5rem, 0.9rem, 1.0em);
             opacity: 0.7;
             font-weight: 500;
             margin-bottom: clamp(6px, 0.2rem, 12px);
@@ -73,7 +73,7 @@ def index():
             width: 100%;
             font-weight: 700;
             line-height: 1.05;
-            font-size: clamp(1.2rem, 12vw, {max_font_size});
+            font-size: clamp(0.8rem, 12vw, {max_font_size});
             word-break: break-word;
             overflow-wrap: anywhere;
           }}
