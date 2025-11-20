@@ -58,15 +58,15 @@ def index():
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: clamp(12px, 3vw, 32px);
+            padding: clamp(16px, 4vw, 48px);
             text-align: center;
           }}
 
           .label {{
-            font-size: clamp(0.7rem, 1.6vw, 0.95rem);
+            font-size: clamp(1.0rem, 2.0vw, 0.95rem);
             opacity: 0.7;
             font-weight: 500;
-            margin-bottom: clamp(6px, 1.2vw, 12px);
+            margin-bottom: clamp(6px, 0.2rem, 12px);
           }}
 
           .ip {{
